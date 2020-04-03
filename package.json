@@ -1,0 +1,28 @@
+{
+  "name": "CI-CD_okta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/va9ty/CI-CD_okta.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/va9ty/CI-CD_okta/issues"
+  },
+  "homepage": "https://github.com/va9ty/CI-CD_okta#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.1",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
+  }
+}
