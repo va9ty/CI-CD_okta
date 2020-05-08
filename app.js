@@ -1,3 +1,4 @@
+
 var express = require('express');
 var app = express();
 var fs = require('fs');
@@ -12,4 +13,4 @@ var server = http.createServer(function (req, res) {
   myreadStream.pipe(res);;
 }).listen(4000);
 
-conosole.log("listening on port 4000 !");
+console.log("listening on port 4000 !");
