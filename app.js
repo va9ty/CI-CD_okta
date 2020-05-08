@@ -1,10 +1,10 @@
 var express = require('express');
 var app = express();
 
-app.get('/',function(req,res) {
-  res.send("Hello World");
-});
 
-app.listen(4000);
-console.log("listening on port 4000");
+var http = require('http');
 
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World!');
+}).listen(4000);
