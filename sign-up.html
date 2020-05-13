@@ -1,0 +1,23 @@
+{% extends 'material/base.html' %}
+
+{% block title %}Raw Form Example{% endblock %}
+
+{% block content %}
+<div class="center-align card-panel teal lighten-2"><span class="white-text"><h5>User Analysis report </h5></span></div>
+    <form method="POST">
+    
+
+        <div class="container col s12 section" >
+        <div class ="section">
+            <label for="okta_tenant">Okta Tenant URL</label>
+            <input id="okta_tenant" name="okta_tenantname" type="text">
+        </div>
+        <div class="section">
+            <label for="APIToken">API token</label>
+            <input id="APIToken" name="APITokenname" type="text">
+        </div>
+        <input class="waves-effect waves-light btn" type="submit" value="Sumbit">
+
+    </div>
+    </form>
+{% endblock %}
