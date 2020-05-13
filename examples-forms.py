@@ -40,7 +40,6 @@ def sign_up():
             t = report1.main(Okta_tenant,API_token)
             path=t
             return redirect(url_for('thank_you',path=path))
-            
 
 
 
@@ -50,4 +49,4 @@ def sign_up():
 # More powerful approach using WTForms
 
 # Run the application
-app.run(debug=True)
+app.run(port=5000,debug=True)
