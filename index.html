@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+{% extends 'material/base.html' %}
 
-<html>
-<head></head>
+{% block title %}Home{% endblock %}
 
-<body>
+{% block content %}
 
-<h1> working from local : trial3 : git push triggering the pipeline ! <h1>
-
-</body>
-</html>
-
-
+<div class="card-panel teal lighten-2"><span ><h6>Choose the report you would like to generate : </h6></span></div>
+    <br/>
+    <br/>
+    <div class ="container col s12">
+    <li><a class="waves-effect waves-light btn" href="/report1">User analaysis report</a></li>
+    <br/>
+    <li><a class="waves-effect waves-light btn" href="/register">Report2</a></li>
+    </ul>
+{% endblock %}
