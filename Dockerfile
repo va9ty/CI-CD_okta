@@ -18,5 +18,5 @@ RUN pip install -r requirements.txt
 # Bundle app source
 COPY . .
 
-EXPOSE 5150
+EXPOSE 5000
 CMD [ "python", "examples-forms.py" ]
