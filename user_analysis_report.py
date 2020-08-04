@@ -53,76 +53,75 @@ def process_state(users,response):
 		content.append(l)
 
 	         
-	"""
-	link_headers = response.headers["link"] # api call
-	link_headers = list(link_headers.split(","))
-
-	self_link = link_headers[0].split(";")[0].strip(" <>")
-	next_link = str(link_headers[1].split(";")[0]).strip(" <>")
-
-	count=0
-
-	while(len(link_headers)>1 and next_link!=""):
-		final_url = next_link
-		response = requests.get(final_url, headers=header)
-		users = json.loads(response.text)
-		for user in users:
-			t=user["profile"]
-			l=[]
-			try:
-				p1=t["displayName"]
-				l.append(p1)
-
-			except KeyError as e:
-				l.append(" ")
-			try:
-				p=t["firstName"]
-				l.append(p)
-
-			except KeyError as e:
-				l.append(" ")
-			try:
-				p1=t["lastName"]
-				l.append(p1)
-
-
-			except KeyError as e:
-				l.append(" ")
-
-			try:
-				p1=t["login"]
-				l.append(p1)
-
-			except KeyError as e:
-				print(e)
-
-			try:
-				p1=t["city"]
-				l.append(p1)
-
-
-			except KeyError as e:
-				l.append(" ")
-			try:
-				p1=t["countryCode"]
-				l.append(p1)
-
-
-			except KeyError as e:
-				l.append(" ")
-
-			content.append(l)
-
-		
-		link_headers = response.headers["link"]
+	if(response.headers["link"]):
+		link_headers = response.headers["link"] # api call
 		link_headers = list(link_headers.split(","))
-
-		self_link = link_headers[0].split(";")[0].strip(" <>")
-		if(len(link_headers)>1):
+		if (len(link_headers) >1):
+			self_link = link_headers[0].split(";")[0].strip(" <>")
 			next_link = str(link_headers[1].split(";")[0]).strip(" <>")
-		count+=1
-		print(count,response,next_link)
-		"""
+
+			count=0
+
+			while(len(link_headers)>1 and next_link!=""):
+				final_url = next_link
+				response = requests.get(final_url, headers=header)
+				users = json.loads(response.text)
+				for user in users:
+					t=user["profile"]
+					l=[]
+					try:
+						p1=t["displayName"]
+						l.append(p1)
+
+					except KeyError as e:
+						l.append(" ")
+					try:
+						p=t["firstName"]
+						l.append(p)
+
+					except KeyError as e:
+						l.append(" ")
+					try:
+						p1=t["lastName"]
+						l.append(p1)
+
+
+					except KeyError as e:
+						l.append(" ")
+
+					try:
+						p1=t["login"]
+						l.append(p1)
+
+					except KeyError as e:
+						print(e)
+
+					try:
+						p1=t["city"]
+						l.append(p1)
+
+
+					except KeyError as e:
+						l.append(" ")
+					try:
+						p1=t["countryCode"]
+						l.append(p1)
+
+
+					except KeyError as e:
+						l.append(" ")
+
+					content.append(l)
+
+				
+				link_headers = response.headers["link"]
+				link_headers = list(link_headers.split(","))
+
+				self_link = link_headers[0].split(";")[0].strip(" <>")
+				if(len(link_headers)>1):
+					next_link = str(link_headers[1].split(";")[0]).strip(" <>")
+				count+=1
+				print(count,response,next_link)
 
 	return content
 
@@ -227,6 +226,7 @@ def main(Okta_tenant, API_token):
 
 #if __name__ == '__main__':
 #	main()
+
 
 
 
