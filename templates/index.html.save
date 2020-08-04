@@ -1,0 +1,29 @@
+{% extends 'material/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="card-panel teal lighten-2"><span ><h6>Choose the report you would like to generate : </h6></span></div>
+    <br/>
+    <br/>
+    <div class ="container col s12">
+    <li><a class="waves-effect waves-light btn" href="/report1">User analaysis report</a></li>
+    <br/>
+    <li><a class="waves-effect waves-light btn" href="/register">Report2</a></li>
+    </ul>
+{% endblock %}{% extends 'material/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="card-panel teal lighten-2"><span ><h6>Choose the report you would like to generate : </h6></span></div>
+    <br/>
+    <br/>
+    <div class ="container col s12">
+    <li><a class="waves-effect waves-light btn" href="/report1">User analaysis report</a></li>
+    <br/>
+    <li><a class="waves-effect waves-light btn" href="/register">Report2</a></li>
+    </ul>
+{% endbloc
