@@ -17,7 +17,7 @@ properties = []
 
 @app.route('/logs')
 def logs():
-    return render_template('temp_logs.html')
+    return render_template('./temp_logs.html')
 
 @app.route('/')
 def index():
