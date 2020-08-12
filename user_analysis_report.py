@@ -3,7 +3,7 @@ import requests
 from datetime import datetime
 
 from openpyxl import Workbook
-file = open("templates/temp_logs.html","w+")
+file = open("temp_logs.html","w+")
 
 content = " <!DOCTYPE html><html><head>"
 file.write(content)
