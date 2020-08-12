@@ -1,0 +1,56 @@
+{% extends 'material/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<script src="{{ url_for('static', filename='js/script1.js') }}"></script>
+
+<div class="center-align card-panel teal lighten-2"><span class="white-text"><h7>Choose the available attributes that you would like to be represented in your report </h7></span></div>
+    <form method="POST">
+    
+
+        <div class="container col section" >
+        
+        <p class ="center-align s10 m6 section">
+            {% for items in get_properties() %}
+            <div class="row"> 
+                {% for item in items %}
+                <div class="col s3">
+                <label> 
+                <input type="checkbox" name="chosen_attr" value={{item}} />
+                <span class="black-text">{{item}}</span>
+                </label>
+                </div>
+
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </p>
+
+
+        
+
+    <input id="downloading" class="waves-effect waves-light btn " type="submit" value="Download Report" onclick="download()"><i id="icn" class="material-icons"> arrow_downward </i><div class="preloader-wrapper big active" id="loading" style="display:none">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+    </div>
+    </form>
+
+
+    <div class="center-align card-panel teal lighten-2"><span class="white-text">
+        <iframe src="/logs" height="250" width="900" title=""></iframe>
+    </span></div>
+
+    
+
+{% endblock %}
